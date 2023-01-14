@@ -66,19 +66,14 @@ public class CycleDetect {
 	    for (int v=0;v<N;v++)
 	    {
 
-	        if (adjMat[u][v]==1 && color[v]==1)
-	        {
-	            flag = true;
-	        }
-
-	        else if (adjMat[u][v]==1 && color[v]==2)
-	        {
-	        }
-
-	        else if (adjMat[u][v]==1 && color[v]==0)
+	        if (adjMat[u][v]==1 && color[v]==0)
 	        {
 	            prev[v]=u;
 	            visited(adjMat,v);
+	        }
+	        else if (adjMat[u][v]==1 && color[v]==1)
+	        {
+	            flag = true;
 	        }
 	    }
 	    color[u]=2;
